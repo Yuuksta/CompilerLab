@@ -1,0 +1,12 @@
+int a(int c)
+a = 12
+float b
+b = 3.0
+if(a == b) return 0
+else return 1
+while(a != 0) {
+    b = b + 1
+    a = a + 2
+    a = a / b
+    b = a * a
+}
