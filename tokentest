@@ -1,4 +1,17 @@
-int a
-int b
-a = 10
-s = 'a'
+int globle_i
+char globle_c
+float price
+int main(int argc, char argv) {
+    int a
+    float b
+    char c
+    a = 2
+    b = 3.0
+    globle_i = 10
+    while(globle_i > 0) {
+        a = a * b - 1
+        globle_i --
+    }   
+    price = a
+    return price
+}

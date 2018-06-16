@@ -12,10 +12,10 @@
 %token <node> Tif Telse Twhile Treturn Tint Tfloat Tchar Tvoid
 %token <node> Tidentifier TfloatVal TintVal Tassign TcmpEqual TcmpNotEqual TlessThan TlessThanEq
 %token <node> TmoreThan TmoreThanEq TleftParen TrightParen TleftBrace Tsemi
-%token <node> TrightBrace Tdot Tcomma Tplus Tminus Tmul Tdiv Tmod
+%token <node> TrightBrace Tdot Tplus Tminus Tmul Tdiv Tmod
 %token <node> Tand Tor TselfMinus TselfInc Tnot TcharVal
 
-%type <node> Program DecList Declare VarDecl Type FuncDecl StmtBlock Stmt
+%type <node> Program DecList Declare VarDecl Type FuncDecl StmtBlock Stmt VarDecList
 %type <node> Expr IfStmt ElseStmt WhileStmt ReturnStmt StmtList
 
 %right Tassign
@@ -34,6 +34,7 @@
 Program: { root = CreateAST("Program",0,-1); }
     | DecList StmtList { root = CreateAST("Program",2,$1,$2); }
     ;
+
 DecList: { $$ = CreateAST("DecList",0,-1); }
     | Declare DecList { $$ = CreateAST("DecList",2,$1,$2); }
     ;
@@ -42,19 +43,24 @@ Declare: VarDecl { $$ = CreateAST("Declare",1,$1); }
     | FuncDecl { $$ = CreateAST("Declare",1,$1); }
     ;
 
-VarDecl: Type Tidentifier { $$ = CreateAST("VarDecl",2,$1,$2); };
+VarDecl: Type Tidentifier { $$ = CreateAST("VarDecl",2,$1,$2); }
+    ;
+
+VarDecList: VarDecl { $$ = CreateAST("VarDecList",1,$1); }
+    | VarDecl ',' VarDecList { $$ =CreateAST("VarDecList",2,$1,$3); }
+    ;
 
 Type: Tint { $$ = CreateAST("Type",1,$1); }
     | Tchar { $$ = CreateAST("Type",1,$1); } 
     | Tfloat { $$ = CreateAST("Type",1,$1); }
     ;
 
-FuncDecl: Type Tidentifier '(' VarDecl ')' StmtBlock { $$ = CreateAST("FuncDecl",4,$1,$2,$4,$6); }
-    | Tvoid Tidentifier '(' VarDecl ')' StmtBlock { $$ = CreateAST("FuncDecl",4,$1,$2,$4,$6); }
+FuncDecl: Type Tidentifier '(' VarDecList ')' StmtBlock { $$ = CreateAST("FuncDecl",4,$1,$2,$4,$6); }
+    | Tvoid Tidentifier '(' VarDecList ')' StmtBlock { $$ = CreateAST("FuncDecl",4,$1,$2,$4,$6); }
     ;
 
 StmtBlock: { $$ = CreateAST("StmtBlock",0,-1); } 
-    | '{' StmtList '}' { $$ = CreateAST("StmtBlock",1,$2); }
+    | '{' DecList StmtList '}' { $$ = CreateAST("StmtBlock",2,$2,$3); }
     ;
 
 StmtList: { $$ = CreateAST("StmtList",0,-1); }

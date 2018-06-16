@@ -69,18 +69,17 @@ extern int yydebug;
     Tsemi = 279,
     TrightBrace = 280,
     Tdot = 281,
-    Tcomma = 282,
-    Tplus = 283,
-    Tminus = 284,
-    Tmul = 285,
-    Tdiv = 286,
-    Tmod = 287,
-    Tand = 288,
-    Tor = 289,
-    TselfMinus = 290,
-    TselfInc = 291,
-    Tnot = 292,
-    TcharVal = 293
+    Tplus = 282,
+    Tminus = 283,
+    Tmul = 284,
+    Tdiv = 285,
+    Tmod = 286,
+    Tand = 287,
+    Tor = 288,
+    TselfMinus = 289,
+    TselfInc = 290,
+    Tnot = 291,
+    TcharVal = 292
   };
 #endif
 
@@ -93,7 +92,7 @@ union YYSTYPE
 
     Node *node;
 
-#line 97 "grammer.tab.h" /* yacc.c:1909  */
+#line 96 "grammer.tab.h" /* yacc.c:1909  */
 };
 
 typedef union YYSTYPE YYSTYPE;

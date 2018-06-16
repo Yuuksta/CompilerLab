@@ -19,43 +19,43 @@
 %%
 
 [ \t\n]                       ;
-"if"                          { TOKEN("Tif"); /*printf("if");*/ return Tif; }
-"else"                        { TOKEN("Telse"); /*printf("else");*/ return Telse; }
-"while"                       { TOKEN("Twhile"); /*printf("while");*/ return Twhile; }
-"return"                      { TOKEN("Treturn"); /*printf("return");*/ return Treturn; }
-"int"                         { TOKEN("Tint"); /*printf("int");*/ return Tint; }
-"float"                       { TOKEN("Tfloat"); /*printf("float");*/ return Tfloat; }
-"char"                        { TOKEN("Tchar"); /*printf("char");*/ return Tchar; }
-"void"                        { TOKEN("Tvoid"); /*printf("void");*/ return Tvoid; }
-[a-zA-Z_][a-zA-Z0-9_]*        { TOKEN("Tidentifier"); /*printf("identifier");*/ return Tidentifier; }
-[0-9]+\.[0-9]*                { TOKEN("TfloatVal"); /*printf("floatValue");*/ return TfloatVal; }
-[0-9]+                        { TOKEN("TintVal");/* printf("intValue");*/return TintVal; }
-'.'                           { TOKEN("TcharVal"); return TcharVal; }
-";"                           { TOKEN("Tsemi"); /*printf("; semi");*/ return Tsemi; }
-"="                           { TOKEN("Tassign"); /*printf("= assign");*/ return Tassign; }
-"=="                          { TOKEN("TcmpEqual"); /*printf("= cmpEqual");*/ return TcmpEqual; }
-"!="                          { TOKEN("TcmpNotEqual"); /* cmpNotEqual");*/ return TcmpNotEqual; }
-"<"                           { TOKEN("TlessThan"); /*printf("< lessThan");*/ return TlessThan; } 
-"<="                          { TOKEN("TlessThanEq"); /*printf("<= lessThanEqual");*/ return TlessThanEq; }
-">"                           { TOKEN("TmoreThan"); /*printf("> moreThan");*/ return TmoreThan; }
-">="                          { TOKEN("TmoreThanEq"); /*printf(">= moreThanEqual");*/ return TmoreThanEq; }
-"("                           { TOKEN("TleftParen"); /*printf(" leftParen");*/ return yytext[0]; } 
-")"                           { TOKEN("TrightParen"); /*printf(" rightParen");*/ return yytext[0]; }
-"{"                           { TOKEN("TleftBrace"); /*printf(" leftBrace");*/ return yytext[0]; }
-"}"                           { TOKEN("TrightBrace"); /*printf(" rightBrace");*/ return yytext[0]; }
-"."                           { TOKEN("Tdot"); /*printf(". dot");*/ return Tdot; }
-","                           { TOKEN("Tcomma"); /*printf(", comma");*/ return Tcomma; }
-"+"                           { TOKEN("Tplus"); /*printf("+ plus");*/ return Tplus; }
-"-"                           { TOKEN("Tminus"); /*printf("- minus");*/ return Tminus; }
-"*"                           { TOKEN("Tmul"); /*("* mul");*/ return Tmul; }
-"/"                           { TOKEN("Tdiv"); /*printf("/ div");*/ return Tdiv; }
-"%"                           { TOKEN("Tmod"); /*printf(" mod");*/ return Tmod; }
-"&&"                          { TOKEN("Tand"); /*printf("&& and");*/ return Tand; }
-"||"                          { TOKEN("Tor"); /*printf("|| or");*/ return Tor; }
-"--"                          { TOKEN("TselfMinus"); /*printf("-- selfminus");*/ return TselfMinus; }
-"++"                          { TOKEN("TselfInc"); /*printf("++ selfInc");*/ return TselfInc; }
-"!"                           { TOKEN("Tnot"); return Tnot; }
-.                             { TOKEN("Tunknow"); /*printf("Unknown token!\n");*/ yyterminate(); }
+"if"                          { TOKEN("if"); /*printf("if");*/ return Tif; }
+"else"                        { TOKEN("else"); /*printf("else");*/ return Telse; }
+"while"                       { TOKEN("while"); /*printf("while");*/ return Twhile; }
+"return"                      { TOKEN("return"); /*printf("return");*/ return Treturn; }
+"int"                         { TOKEN("int"); /*printf("int");*/ return Tint; }
+"float"                       { TOKEN("float"); /*printf("float");*/ return Tfloat; }
+"char"                        { TOKEN("char"); /*printf("char");*/ return Tchar; }
+"void"                        { TOKEN("void"); /*printf("void");*/ return Tvoid; }
+[a-zA-Z_][a-zA-Z0-9_]*        { TOKEN("identifier"); /*printf("identifier");*/ return Tidentifier; }
+[0-9]+\.[0-9]*                { TOKEN("floatVal"); /*printf("floatValue");*/ return TfloatVal; }
+[0-9]+                        { TOKEN("intVal");/* printf("intValue");*/return TintVal; }
+'.'                           { TOKEN("charVal"); return TcharVal; }
+";"                           { TOKEN("semi"); /*printf("; semi");*/ return Tsemi; }
+"="                           { TOKEN("assign"); /*printf("= assign");*/ return Tassign; }
+"=="                          { TOKEN("cmpEqual"); /*printf("= cmpEqual");*/ return TcmpEqual; }
+"!="                          { TOKEN("cmpNotEqual"); /* cmpNotEqual");*/ return TcmpNotEqual; }
+"<"                           { TOKEN("lessThan"); /*printf("< lessThan");*/ return TlessThan; } 
+"<="                          { TOKEN("lessThanEq"); /*printf("<= lessThanEqual");*/ return TlessThanEq; }
+">"                           { TOKEN("moreThan"); /*printf("> moreThan");*/ return TmoreThan; }
+">="                          { TOKEN("moreThanEq"); /*printf(">= moreThanEqual");*/ return TmoreThanEq; }
+"("                           { TOKEN("leftParen"); /*printf(" leftParen");*/ return yytext[0]; } 
+")"                           { TOKEN("rightParen"); /*printf(" rightParen");*/ return yytext[0]; }
+"{"                           { TOKEN("leftBrace"); /*printf(" leftBrace");*/ return yytext[0]; }
+"}"                           { TOKEN("rightBrace"); /*printf(" rightBrace");*/ return yytext[0]; }
+"."                           { TOKEN("dot"); /*printf(". dot");*/ return Tdot; }
+","                           { TOKEN("comma"); /*printf(", comma");*/ return yytext[0]; }
+"+"                           { TOKEN("plus"); /*printf("+ plus");*/ return Tplus; }
+"-"                           { TOKEN("minus"); /*printf("- minus");*/ return Tminus; }
+"*"                           { TOKEN("mul"); /*("* mul");*/ return Tmul; }
+"/"                           { TOKEN("div"); /*printf("/ div");*/ return Tdiv; }
+"%"                           { TOKEN("mod"); /*printf(" mod");*/ return Tmod; }
+"&&"                          { TOKEN("and"); /*printf("&& and");*/ return Tand; }
+"||"                          { TOKEN("or"); /*printf("|| or");*/ return Tor; }
+"--"                          { TOKEN("selfMinus"); /*printf("-- selfminus");*/ return TselfMinus; }
+"++"                          { TOKEN("selfInc"); /*printf("++ selfInc");*/ return TselfInc; }
+"!"                           { TOKEN("not"); return Tnot; }
+.                             { TOKEN("unknow"); /*printf("Unknown token!\n");*/ yyterminate(); }
 
 %%
 
