@@ -30,6 +30,7 @@
 [a-zA-Z_][a-zA-Z0-9_]*        { TOKEN("Tidentifier"); /*printf("identifier");*/ return Tidentifier; }
 [0-9]+\.[0-9]*                { TOKEN("TfloatVal"); /*printf("floatValue");*/ return TfloatVal; }
 [0-9]+                        { TOKEN("TintVal");/* printf("intValue");*/return TintVal; }
+'.'                           { TOKEN("TcharVal"); return TcharVal; }
 ";"                           { TOKEN("Tsemi"); /*printf("; semi");*/ return Tsemi; }
 "="                           { TOKEN("Tassign"); /*printf("= assign");*/ return Tassign; }
 "=="                          { TOKEN("TcmpEqual"); /*printf("= cmpEqual");*/ return TcmpEqual; }
@@ -53,6 +54,7 @@
 "||"                          { TOKEN("Tor"); /*printf("|| or");*/ return Tor; }
 "--"                          { TOKEN("TselfMinus"); /*printf("-- selfminus");*/ return TselfMinus; }
 "++"                          { TOKEN("TselfInc"); /*printf("++ selfInc");*/ return TselfInc; }
+"!"                           { TOKEN("Tnot"); return Tnot; }
 .                             { TOKEN("Tunknow"); /*printf("Unknown token!\n");*/ yyterminate(); }
 
 %%

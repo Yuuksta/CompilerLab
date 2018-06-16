@@ -78,7 +78,9 @@ extern int yydebug;
     Tand = 288,
     Tor = 289,
     TselfMinus = 290,
-    TselfInc = 291
+    TselfInc = 291,
+    Tnot = 292,
+    TcharVal = 293
   };
 #endif
 
@@ -91,7 +93,7 @@ union YYSTYPE
 
     Node *node;
 
-#line 95 "grammer.tab.h" /* yacc.c:1909  */
+#line 97 "grammer.tab.h" /* yacc.c:1909  */
 };
 
 typedef union YYSTYPE YYSTYPE;

@@ -20,6 +20,9 @@ Node *CreateAST(char* name, int num, ...) {
         else if(!strcmp(root->name, "TfloatVal")) {
             root->floatVal = atof(yytext);
         }
+        else if(!strcmp(root->name, "TcharVal")) {
+            root->charVal = yytext[1];
+        }
     }
     else if(num > 0) {
         temp = va_arg(valist, Node*);
@@ -36,9 +39,9 @@ Node *CreateAST(char* name, int num, ...) {
 }
 
 void eval(Node* node, int level) {
-    printf("\n");
-    printf(">>>");
     if(node) {
+        printf("\n");
+        printf(">>>");
         for(int i = 0; i < level; i++) {
             printf("  ");
         }
@@ -50,6 +53,8 @@ void eval(Node* node, int level) {
                 printf(":%d", node->intVal);
             else if(!strcmp(node->name, "TfloatVal"))
                 printf(":%f", node->floatVal);
+            else if(!strcmp(node->name, "TcharVal"))
+                printf(":%c", node->charVal);
             else printf("(%d)",node->line);
             eval(node->lchild, level + 1);
             eval(node->rchild, level);
@@ -58,11 +63,12 @@ void eval(Node* node, int level) {
 }
 
 void yyerror(char * str, ...) {
-    /*va_list ap;
+    //printf("error\n");
+    va_list ap;
     va_start(ap,str);
-    //fprintf(stderr,"%d:error:",yylineno);
+    fprintf(stderr,"%d:error:",yylineno);
     vfprintf(stderr,str,ap);
-    fprintf(stderr,"\n");*/
+    fprintf(stderr,"\n");
 }
 
 int main () {

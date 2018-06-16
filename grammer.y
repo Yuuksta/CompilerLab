@@ -13,20 +13,27 @@
 %token <node> Tidentifier TfloatVal TintVal Tassign TcmpEqual TcmpNotEqual TlessThan TlessThanEq
 %token <node> TmoreThan TmoreThanEq TleftParen TrightParen TleftBrace Tsemi
 %token <node> TrightBrace Tdot Tcomma Tplus Tminus Tmul Tdiv Tmod
-%token <node> Tand Tor TselfMinus TselfInc
+%token <node> Tand Tor TselfMinus TselfInc Tnot TcharVal
 
 %type <node> Program DecList Declare VarDecl Type FuncDecl StmtBlock Stmt
 %type <node> Expr IfStmt ElseStmt WhileStmt ReturnStmt StmtList
 
-%left Tor Tand Tplus Tminus Tmul Tdiv TleftBrace TrightBrace TleftParen TrightParen Tdot
+%right Tassign
+%left Tor
+%left Tand
+%left TlessThan TlessThanEq TmoreThan TmoreThanEq TcmpEqual TcmpNotEqual
+%left Tplus Tminus 
+%left Tmul Tdiv
+%right Tnot
+
+
 
 %%
 
 
 Program: { root = CreateAST("Program",0,-1); }
-    | DecList { root = CreateAST("Program",1,$1); }
+    | DecList StmtList { root = CreateAST("Program",2,$1,$2); }
     ;
-
 DecList: { $$ = CreateAST("DecList",0,-1); }
     | Declare DecList { $$ = CreateAST("DecList",2,$1,$2); }
     ;
@@ -91,8 +98,13 @@ Expr: Expr Tassign Expr { $$ = CreateAST("Expr",3,$1,$2,$3); }
     | Expr TmoreThanEq Expr { $$ = CreateAST("Expr",3,$1,$2,$3); }
     | Expr Tmod Expr { $$ = CreateAST("Expr",3,$1,$2,$3); } 
     | Expr TcmpEqual Expr { $$ = CreateAST("Expr",3,$1,$2,$3); }
-    | Expr TcmpNotEqual Expr { $$ = CreateAST("Expr",3,$1,$2,$3); }
+    | Expr Tor Expr { $$ = CreateAST("Expr",3,$1,$2,$3); }
+    | Expr Tand Expr { $$ = CreateAST("Expr",3,$1,$2,$3); }
     | '(' Expr ')' { $$ = CreateAST("Expr",1,$2); }
-    ;
+    | Tnot Expr { $$ = CreateAST("Expr",2,$1,$2); }
+    | TintVal { $$ = CreateAST("Expr",1,$1); }
+    | TfloatVal { $$ = CreateAST("Expr",1,$1); }
+    | Tidentifier { $$ = CreateAST("Expr",1,$1); }
+    | TcharVal { $$ = CreateAST("Expr",1,$1); }
 
 %%

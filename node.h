@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdarg.h>
 #include <string.h>
-extern int yyline;
+extern int yylineno;
 extern char* yytext;
 void yyerror(char *str, ...);
 
@@ -14,6 +14,7 @@ typedef struct Node {
         char *stringVal;
         int intVal;
         float floatVal;
+        char charVal;
     };
     struct Node* lchild;
     struct Node* rchild;
