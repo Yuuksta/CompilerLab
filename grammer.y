@@ -59,7 +59,7 @@ FuncDecl: Type Tidentifier '(' VarDecList ')' StmtBlock { $$ = CreateAST("FuncDe
     | Tvoid Tidentifier '(' VarDecList ')' StmtBlock { $$ = CreateAST("FuncDecl",4,$1,$2,$4,$6); }
     ;
 
-StmtBlock: { $$ = CreateAST("StmtBlock",0,-1); } 
+StmtBlock: { $$ = CreateAST("StmtBlock",0,-1); }
     | '{' DecList StmtList '}' { $$ = CreateAST("StmtBlock",2,$2,$3); }
     ;
 
@@ -75,17 +75,17 @@ Stmt: Expr { $$ = CreateAST("Stmt",1,$1); }
 
 
 IfStmt: Tif '(' Expr ')' Stmt ElseStmt { $$ = CreateAST("IfStmt",4,$1,$3,$5,$6); }
-    | Tif '(' Expr ')' StmtBlock ElseStmt { $$ = CreateAST("IfStmt",4,$1,$3,$5,$6); }
+    | Tif '(' Expr ')' '{' StmtList '}' ElseStmt { $$ = CreateAST("IfStmt",4,$1,$3,$6,$8); }
     ;
 
 ElseStmt: { $$ = CreateAST("ElseStmt",0,-1); }
     | Telse Stmt { $$ = CreateAST("ElseStmt",2,$1,$2); }
-    | Telse StmtBlock { $$ = CreateAST("Stmt",2,$1,$2); }
+    | Telse '{' StmtList '}' { $$ = CreateAST("Stmt",2,$1,$3); }
     ;
 
 
 WhileStmt: Twhile '(' Expr ')' Stmt { $$ = CreateAST("WhileStmt",3,$1,$3,$5); }
-    | Twhile '(' Expr ')' StmtBlock { $$ = CreateAST("WhileStmt",3,$1,$3,$5); }
+    | Twhile '(' Expr ')' '{' StmtList '}' { $$ = CreateAST("WhileStmt",3,$1,$3,$6); }
     ;
 
 ReturnStmt: Treturn Expr { $$ = CreateAST("ReturnStmt",2,$1,$2); }

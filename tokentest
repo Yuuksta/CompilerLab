@@ -9,9 +9,8 @@ int main(int argc, char argv) {
     b = 3.0
     globle_i = 10
     while(globle_i > 0) {
-        a = a * b - 1
-        globle_i --
-    }   
+        a = (a * b - 1) / 2 
+    }
     price = a
     return price
 }
