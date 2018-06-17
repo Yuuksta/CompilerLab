@@ -22,4 +22,4 @@ typedef struct Node {
 
 Node *root;
 Node *CreateAST(char* name, int num, ...);
-void eval(Node* node, int level);
+void Traverse(Node* node, int level);

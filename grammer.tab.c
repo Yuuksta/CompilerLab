@@ -65,11 +65,9 @@
 #line 1 "grammer.y" /* yacc.c:339  */
 
 #include <stdio.h>
-//#include "definition.h"
 #include "node.h"
 
-
-#line 73 "grammer.tab.c" /* yacc.c:339  */
+#line 71 "grammer.tab.c" /* yacc.c:339  */
 
 # ifndef YY_NULLPTR
 #  if defined __cplusplus && 201103L <= __cplusplus
@@ -147,11 +145,11 @@ extern int yydebug;
 
 union YYSTYPE
 {
-#line 8 "grammer.y" /* yacc.c:355  */
+#line 6 "grammer.y" /* yacc.c:355  */
 
     Node *node;
 
-#line 155 "grammer.tab.c" /* yacc.c:355  */
+#line 153 "grammer.tab.c" /* yacc.c:355  */
 };
 
 typedef union YYSTYPE YYSTYPE;
@@ -168,7 +166,7 @@ int yyparse (void);
 
 /* Copy the second part of user declarations.  */
 
-#line 172 "grammer.tab.c" /* yacc.c:358  */
+#line 170 "grammer.tab.c" /* yacc.c:358  */
 
 #ifdef short
 # undef short
@@ -469,12 +467,12 @@ static const yytype_uint8 yytranslate[] =
   /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    34,    34,    35,    38,    39,    42,    43,    46,    49,
-      50,    53,    54,    55,    58,    59,    62,    63,    66,    67,
-      70,    71,    72,    73,    77,    78,    81,    82,    83,    87,
-      88,    91,    94,    95,    96,    97,    98,    99,   100,   101,
-     102,   103,   104,   105,   106,   107,   108,   109,   110,   111,
-     112,   113,   114
+       0,    30,    30,    31,    34,    35,    38,    39,    42,    45,
+      46,    49,    50,    51,    54,    55,    58,    59,    62,    63,
+      66,    67,    68,    69,    73,    74,    77,    78,    79,    83,
+      84,    87,    90,    91,    92,    93,    94,    95,    96,    97,
+      98,    99,   100,   101,   102,   103,   104,   105,   106,   107,
+     108,   109,   110
 };
 #endif
 
@@ -1350,313 +1348,313 @@ yyreduce:
   switch (yyn)
     {
         case 2:
-#line 34 "grammer.y" /* yacc.c:1646  */
+#line 30 "grammer.y" /* yacc.c:1646  */
     { root = CreateAST("Program",0,-1); }
-#line 1356 "grammer.tab.c" /* yacc.c:1646  */
+#line 1354 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 3:
-#line 35 "grammer.y" /* yacc.c:1646  */
+#line 31 "grammer.y" /* yacc.c:1646  */
     { root = CreateAST("Program",2,(yyvsp[-1].node),(yyvsp[0].node)); }
-#line 1362 "grammer.tab.c" /* yacc.c:1646  */
+#line 1360 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 4:
-#line 38 "grammer.y" /* yacc.c:1646  */
+#line 34 "grammer.y" /* yacc.c:1646  */
     { (yyval.node) = CreateAST("DecList",0,-1); }
-#line 1368 "grammer.tab.c" /* yacc.c:1646  */
+#line 1366 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 5:
-#line 39 "grammer.y" /* yacc.c:1646  */
+#line 35 "grammer.y" /* yacc.c:1646  */
     { (yyval.node) = CreateAST("DecList",2,(yyvsp[-1].node),(yyvsp[0].node)); }
-#line 1374 "grammer.tab.c" /* yacc.c:1646  */
+#line 1372 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 6:
-#line 42 "grammer.y" /* yacc.c:1646  */
+#line 38 "grammer.y" /* yacc.c:1646  */
     { (yyval.node) = CreateAST("Declare",1,(yyvsp[0].node)); }
-#line 1380 "grammer.tab.c" /* yacc.c:1646  */
+#line 1378 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 7:
-#line 43 "grammer.y" /* yacc.c:1646  */
+#line 39 "grammer.y" /* yacc.c:1646  */
     { (yyval.node) = CreateAST("Declare",1,(yyvsp[0].node)); }
-#line 1386 "grammer.tab.c" /* yacc.c:1646  */
+#line 1384 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 8:
-#line 46 "grammer.y" /* yacc.c:1646  */
+#line 42 "grammer.y" /* yacc.c:1646  */
     { (yyval.node) = CreateAST("VarDecl",2,(yyvsp[-1].node),(yyvsp[0].node)); }
-#line 1392 "grammer.tab.c" /* yacc.c:1646  */
+#line 1390 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 9:
-#line 49 "grammer.y" /* yacc.c:1646  */
+#line 45 "grammer.y" /* yacc.c:1646  */
     { (yyval.node) = CreateAST("VarDecList",1,(yyvsp[0].node)); }
-#line 1398 "grammer.tab.c" /* yacc.c:1646  */
+#line 1396 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 10:
-#line 50 "grammer.y" /* yacc.c:1646  */
+#line 46 "grammer.y" /* yacc.c:1646  */
     { (yyval.node) =CreateAST("VarDecList",2,(yyvsp[-2].node),(yyvsp[0].node)); }
-#line 1404 "grammer.tab.c" /* yacc.c:1646  */
+#line 1402 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 11:
-#line 53 "grammer.y" /* yacc.c:1646  */
+#line 49 "grammer.y" /* yacc.c:1646  */
     { (yyval.node) = CreateAST("Type",1,(yyvsp[0].node)); }
-#line 1410 "grammer.tab.c" /* yacc.c:1646  */
+#line 1408 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 12:
-#line 54 "grammer.y" /* yacc.c:1646  */
+#line 50 "grammer.y" /* yacc.c:1646  */
     { (yyval.node) = CreateAST("Type",1,(yyvsp[0].node)); }
-#line 1416 "grammer.tab.c" /* yacc.c:1646  */
+#line 1414 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 13:
-#line 55 "grammer.y" /* yacc.c:1646  */
+#line 51 "grammer.y" /* yacc.c:1646  */
     { (yyval.node) = CreateAST("Type",1,(yyvsp[0].node)); }
-#line 1422 "grammer.tab.c" /* yacc.c:1646  */
+#line 1420 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 14:
-#line 58 "grammer.y" /* yacc.c:1646  */
+#line 54 "grammer.y" /* yacc.c:1646  */
     { (yyval.node) = CreateAST("FuncDecl",4,(yyvsp[-5].node),(yyvsp[-4].node),(yyvsp[-2].node),(yyvsp[0].node)); }
-#line 1428 "grammer.tab.c" /* yacc.c:1646  */
+#line 1426 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 15:
-#line 59 "grammer.y" /* yacc.c:1646  */
+#line 55 "grammer.y" /* yacc.c:1646  */
     { (yyval.node) = CreateAST("FuncDecl",4,(yyvsp[-5].node),(yyvsp[-4].node),(yyvsp[-2].node),(yyvsp[0].node)); }
-#line 1434 "grammer.tab.c" /* yacc.c:1646  */
+#line 1432 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 16:
-#line 62 "grammer.y" /* yacc.c:1646  */
+#line 58 "grammer.y" /* yacc.c:1646  */
     { (yyval.node) = CreateAST("StmtBlock",0,-1); }
-#line 1440 "grammer.tab.c" /* yacc.c:1646  */
+#line 1438 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 17:
-#line 63 "grammer.y" /* yacc.c:1646  */
+#line 59 "grammer.y" /* yacc.c:1646  */
     { (yyval.node) = CreateAST("StmtBlock",2,(yyvsp[-2].node),(yyvsp[-1].node)); }
-#line 1446 "grammer.tab.c" /* yacc.c:1646  */
+#line 1444 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 18:
-#line 66 "grammer.y" /* yacc.c:1646  */
+#line 62 "grammer.y" /* yacc.c:1646  */
     { (yyval.node) = CreateAST("StmtList",0,-1); }
-#line 1452 "grammer.tab.c" /* yacc.c:1646  */
+#line 1450 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 19:
-#line 67 "grammer.y" /* yacc.c:1646  */
+#line 63 "grammer.y" /* yacc.c:1646  */
     { (yyval.node) = CreateAST("StmtList",2,(yyvsp[-1].node),(yyvsp[0].node)); }
-#line 1458 "grammer.tab.c" /* yacc.c:1646  */
+#line 1456 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 20:
-#line 70 "grammer.y" /* yacc.c:1646  */
+#line 66 "grammer.y" /* yacc.c:1646  */
     { (yyval.node) = CreateAST("Stmt",1,(yyvsp[0].node)); }
-#line 1464 "grammer.tab.c" /* yacc.c:1646  */
+#line 1462 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 21:
-#line 71 "grammer.y" /* yacc.c:1646  */
+#line 67 "grammer.y" /* yacc.c:1646  */
     { (yyval.node) = CreateAST("Stmt",1,(yyvsp[0].node)); }
-#line 1470 "grammer.tab.c" /* yacc.c:1646  */
+#line 1468 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 22:
-#line 72 "grammer.y" /* yacc.c:1646  */
+#line 68 "grammer.y" /* yacc.c:1646  */
     { (yyval.node) = CreateAST("Stmt",1,(yyvsp[0].node)); }
-#line 1476 "grammer.tab.c" /* yacc.c:1646  */
+#line 1474 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 23:
-#line 73 "grammer.y" /* yacc.c:1646  */
+#line 69 "grammer.y" /* yacc.c:1646  */
     { (yyval.node) = CreateAST("Stmt",1,(yyvsp[0].node)); }
-#line 1482 "grammer.tab.c" /* yacc.c:1646  */
+#line 1480 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 24:
-#line 77 "grammer.y" /* yacc.c:1646  */
+#line 73 "grammer.y" /* yacc.c:1646  */
     { (yyval.node) = CreateAST("IfStmt",4,(yyvsp[-5].node),(yyvsp[-3].node),(yyvsp[-1].node),(yyvsp[0].node)); }
-#line 1488 "grammer.tab.c" /* yacc.c:1646  */
+#line 1486 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 25:
-#line 78 "grammer.y" /* yacc.c:1646  */
+#line 74 "grammer.y" /* yacc.c:1646  */
     { (yyval.node) = CreateAST("IfStmt",4,(yyvsp[-7].node),(yyvsp[-5].node),(yyvsp[-2].node),(yyvsp[0].node)); }
-#line 1494 "grammer.tab.c" /* yacc.c:1646  */
+#line 1492 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 26:
-#line 81 "grammer.y" /* yacc.c:1646  */
+#line 77 "grammer.y" /* yacc.c:1646  */
     { (yyval.node) = CreateAST("ElseStmt",0,-1); }
-#line 1500 "grammer.tab.c" /* yacc.c:1646  */
+#line 1498 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 27:
-#line 82 "grammer.y" /* yacc.c:1646  */
+#line 78 "grammer.y" /* yacc.c:1646  */
     { (yyval.node) = CreateAST("ElseStmt",2,(yyvsp[-1].node),(yyvsp[0].node)); }
-#line 1506 "grammer.tab.c" /* yacc.c:1646  */
+#line 1504 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 28:
-#line 83 "grammer.y" /* yacc.c:1646  */
+#line 79 "grammer.y" /* yacc.c:1646  */
     { (yyval.node) = CreateAST("Stmt",2,(yyvsp[-3].node),(yyvsp[-1].node)); }
-#line 1512 "grammer.tab.c" /* yacc.c:1646  */
+#line 1510 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 29:
-#line 87 "grammer.y" /* yacc.c:1646  */
+#line 83 "grammer.y" /* yacc.c:1646  */
     { (yyval.node) = CreateAST("WhileStmt",3,(yyvsp[-4].node),(yyvsp[-2].node),(yyvsp[0].node)); }
-#line 1518 "grammer.tab.c" /* yacc.c:1646  */
+#line 1516 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 30:
-#line 88 "grammer.y" /* yacc.c:1646  */
+#line 84 "grammer.y" /* yacc.c:1646  */
     { (yyval.node) = CreateAST("WhileStmt",3,(yyvsp[-6].node),(yyvsp[-4].node),(yyvsp[-1].node)); }
-#line 1524 "grammer.tab.c" /* yacc.c:1646  */
+#line 1522 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 31:
-#line 91 "grammer.y" /* yacc.c:1646  */
+#line 87 "grammer.y" /* yacc.c:1646  */
     { (yyval.node) = CreateAST("ReturnStmt",2,(yyvsp[-1].node),(yyvsp[0].node)); }
-#line 1530 "grammer.tab.c" /* yacc.c:1646  */
+#line 1528 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 32:
-#line 94 "grammer.y" /* yacc.c:1646  */
+#line 90 "grammer.y" /* yacc.c:1646  */
     { (yyval.node) = CreateAST("Expr",3,(yyvsp[-2].node),(yyvsp[-1].node),(yyvsp[0].node)); }
-#line 1536 "grammer.tab.c" /* yacc.c:1646  */
+#line 1534 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 33:
-#line 95 "grammer.y" /* yacc.c:1646  */
+#line 91 "grammer.y" /* yacc.c:1646  */
     { (yyval.node) = CreateAST("Expr",3,(yyvsp[-2].node),(yyvsp[-1].node),(yyvsp[0].node)); }
-#line 1542 "grammer.tab.c" /* yacc.c:1646  */
+#line 1540 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 34:
-#line 96 "grammer.y" /* yacc.c:1646  */
+#line 92 "grammer.y" /* yacc.c:1646  */
     { (yyval.node) = CreateAST("Expr",3,(yyvsp[-2].node),(yyvsp[-1].node),(yyvsp[0].node)); }
-#line 1548 "grammer.tab.c" /* yacc.c:1646  */
+#line 1546 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 35:
-#line 97 "grammer.y" /* yacc.c:1646  */
+#line 93 "grammer.y" /* yacc.c:1646  */
     { (yyval.node) = CreateAST("Expr",3,(yyvsp[-2].node),(yyvsp[-1].node),(yyvsp[0].node)); }
-#line 1554 "grammer.tab.c" /* yacc.c:1646  */
+#line 1552 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 36:
-#line 98 "grammer.y" /* yacc.c:1646  */
+#line 94 "grammer.y" /* yacc.c:1646  */
     { (yyval.node) = CreateAST("Expr",3,(yyvsp[-2].node),(yyvsp[-1].node),(yyvsp[0].node)); }
-#line 1560 "grammer.tab.c" /* yacc.c:1646  */
+#line 1558 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 37:
-#line 99 "grammer.y" /* yacc.c:1646  */
+#line 95 "grammer.y" /* yacc.c:1646  */
     { (yyval.node) = CreateAST("Expr",2,(yyvsp[-1].node),(yyvsp[0].node)); }
-#line 1566 "grammer.tab.c" /* yacc.c:1646  */
+#line 1564 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 38:
-#line 100 "grammer.y" /* yacc.c:1646  */
+#line 96 "grammer.y" /* yacc.c:1646  */
     { (yyval.node) = CreateAST("Expr",2,(yyvsp[-1].node),(yyvsp[0].node)); }
-#line 1572 "grammer.tab.c" /* yacc.c:1646  */
+#line 1570 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 39:
-#line 101 "grammer.y" /* yacc.c:1646  */
+#line 97 "grammer.y" /* yacc.c:1646  */
     { (yyval.node) = CreateAST("Expr",3,(yyvsp[-2].node),(yyvsp[-1].node),(yyvsp[0].node)); }
-#line 1578 "grammer.tab.c" /* yacc.c:1646  */
+#line 1576 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 40:
-#line 102 "grammer.y" /* yacc.c:1646  */
+#line 98 "grammer.y" /* yacc.c:1646  */
     { (yyval.node) = CreateAST("Expr",3,(yyvsp[-2].node),(yyvsp[-1].node),(yyvsp[0].node)); }
-#line 1584 "grammer.tab.c" /* yacc.c:1646  */
+#line 1582 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 41:
-#line 103 "grammer.y" /* yacc.c:1646  */
+#line 99 "grammer.y" /* yacc.c:1646  */
     { (yyval.node) = CreateAST("Expr",3,(yyvsp[-2].node),(yyvsp[-1].node),(yyvsp[0].node)); }
-#line 1590 "grammer.tab.c" /* yacc.c:1646  */
+#line 1588 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 42:
-#line 104 "grammer.y" /* yacc.c:1646  */
+#line 100 "grammer.y" /* yacc.c:1646  */
     { (yyval.node) = CreateAST("Expr",3,(yyvsp[-2].node),(yyvsp[-1].node),(yyvsp[0].node)); }
-#line 1596 "grammer.tab.c" /* yacc.c:1646  */
+#line 1594 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 43:
-#line 105 "grammer.y" /* yacc.c:1646  */
+#line 101 "grammer.y" /* yacc.c:1646  */
     { (yyval.node) = CreateAST("Expr",3,(yyvsp[-2].node),(yyvsp[-1].node),(yyvsp[0].node)); }
-#line 1602 "grammer.tab.c" /* yacc.c:1646  */
+#line 1600 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 44:
-#line 106 "grammer.y" /* yacc.c:1646  */
+#line 102 "grammer.y" /* yacc.c:1646  */
     { (yyval.node) = CreateAST("Expr",3,(yyvsp[-2].node),(yyvsp[-1].node),(yyvsp[0].node)); }
-#line 1608 "grammer.tab.c" /* yacc.c:1646  */
+#line 1606 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 45:
-#line 107 "grammer.y" /* yacc.c:1646  */
+#line 103 "grammer.y" /* yacc.c:1646  */
     { (yyval.node) = CreateAST("Expr",3,(yyvsp[-2].node),(yyvsp[-1].node),(yyvsp[0].node)); }
-#line 1614 "grammer.tab.c" /* yacc.c:1646  */
+#line 1612 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 46:
-#line 108 "grammer.y" /* yacc.c:1646  */
+#line 104 "grammer.y" /* yacc.c:1646  */
     { (yyval.node) = CreateAST("Expr",3,(yyvsp[-2].node),(yyvsp[-1].node),(yyvsp[0].node)); }
-#line 1620 "grammer.tab.c" /* yacc.c:1646  */
+#line 1618 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 47:
-#line 109 "grammer.y" /* yacc.c:1646  */
+#line 105 "grammer.y" /* yacc.c:1646  */
     { (yyval.node) = CreateAST("Expr",1,(yyvsp[-1].node)); }
-#line 1626 "grammer.tab.c" /* yacc.c:1646  */
+#line 1624 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 48:
-#line 110 "grammer.y" /* yacc.c:1646  */
+#line 106 "grammer.y" /* yacc.c:1646  */
     { (yyval.node) = CreateAST("Expr",2,(yyvsp[-1].node),(yyvsp[0].node)); }
-#line 1632 "grammer.tab.c" /* yacc.c:1646  */
+#line 1630 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 49:
-#line 111 "grammer.y" /* yacc.c:1646  */
+#line 107 "grammer.y" /* yacc.c:1646  */
     { (yyval.node) = CreateAST("Expr",1,(yyvsp[0].node)); }
-#line 1638 "grammer.tab.c" /* yacc.c:1646  */
+#line 1636 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 50:
-#line 112 "grammer.y" /* yacc.c:1646  */
+#line 108 "grammer.y" /* yacc.c:1646  */
     { (yyval.node) = CreateAST("Expr",1,(yyvsp[0].node)); }
-#line 1644 "grammer.tab.c" /* yacc.c:1646  */
+#line 1642 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 51:
-#line 113 "grammer.y" /* yacc.c:1646  */
+#line 109 "grammer.y" /* yacc.c:1646  */
     { (yyval.node) = CreateAST("Expr",1,(yyvsp[0].node)); }
-#line 1650 "grammer.tab.c" /* yacc.c:1646  */
+#line 1648 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
   case 52:
-#line 114 "grammer.y" /* yacc.c:1646  */
+#line 110 "grammer.y" /* yacc.c:1646  */
     { (yyval.node) = CreateAST("Expr",1,(yyvsp[0].node)); }
-#line 1656 "grammer.tab.c" /* yacc.c:1646  */
+#line 1654 "grammer.tab.c" /* yacc.c:1646  */
     break;
 
 
-#line 1660 "grammer.tab.c" /* yacc.c:1646  */
+#line 1658 "grammer.tab.c" /* yacc.c:1646  */
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires
@@ -1884,4 +1882,4 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 116 "grammer.y" /* yacc.c:1906  */
+#line 112 "grammer.y" /* yacc.c:1906  */

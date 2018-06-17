@@ -8,7 +8,7 @@ int main(int argc, char argv) {
     a = 2
     b = 3.0
     globle_i = 10
-    while(globle_i > 0) {
+    while(!globle_i) {
         a = (a * b - 1) / 2 
     }
     price = a

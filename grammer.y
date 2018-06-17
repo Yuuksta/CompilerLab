@@ -1,8 +1,6 @@
 %{
 #include <stdio.h>
-//#include "definition.h"
 #include "node.h"
-
 %}
 
 %union {
@@ -25,8 +23,6 @@
 %left Tplus Tminus 
 %left Tmul Tdiv
 %right Tnot
-
-
 
 %%
 

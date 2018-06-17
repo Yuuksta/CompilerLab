@@ -38,7 +38,7 @@ Node *CreateAST(char* name, int num, ...) {
     return root;
 }
 
-void eval(Node* node, int level) {
+void Traverse(Node* node, int level) {
     if(node) {
         printf("\n");
         for(int i = 0; i < level; i++) {
@@ -51,9 +51,18 @@ void eval(Node* node, int level) {
             else if(!strcmp(node->name, "floatVal")) printf(":%f", node->floatVal);
             else if(!strcmp(node->name, "charVal")) printf(":%c", node->charVal);
             else printf("(%d)",node->line);
-            eval(node->lchild, level + 1);
-            eval(node->rchild, level);
+            Traverse(node->lchild, level + 1);
+            Traverse(node->rchild, level);
         }
+    }
+}
+
+void Free(Node* root) {
+    if(root) {
+        //printf("free: %s l: %d r: %d\n", root->name, root->lchild, root->rchild);
+        Free(root->lchild);
+        Free(root->rchild); 
+        free(root);
     }
 }
 
@@ -68,5 +77,6 @@ void yyerror(char * str, ...) {
 
 int main () {
     yyparse();
-    eval(root,1);
+    Traverse(root,1);
+    Free(root);
 }
