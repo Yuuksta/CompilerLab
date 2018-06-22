@@ -5,7 +5,6 @@
 #include "node.h"
 #include "grammer.tab.h"
 
-//#include "parser.hpp"
 //#define SAVE_TOKEN(t) yylval.a = CreateAST(t, 0, yylineno)
 #define TOKEN(t) ( yylval.node = CreateAST(t,0,yylineno))
 

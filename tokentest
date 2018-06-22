@@ -12,5 +12,11 @@ int main(int argc, char argv) {
         a = (a * b - 1) / 2 
     }
     price = a
+    a++
+    b++
+    if(a > 10) {
+        c = '!'
+        a = a && b
+    }
     return price
 }

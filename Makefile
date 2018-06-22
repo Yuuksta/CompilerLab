@@ -1,4 +1,4 @@
 input: token.l grammer.y node.h
-	bison -d grammer.y
+	bison -d -v grammer.y
 	flex token.l
-	gcc grammer.tab.c lex.yy.c node.c
+	gcc grammer.tab.c lex.yy.c node.c -lfl -ly -o parser

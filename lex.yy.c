@@ -544,7 +544,6 @@ char *yytext;
 #include "node.h"
 #include "grammer.tab.h"
 
-//#include "parser.hpp"
 //#define SAVE_TOKEN(t) yylval.a = CreateAST(t, 0, yylineno)
 #define TOKEN(t) ( yylval.node = CreateAST(t,0,yylineno))
 
@@ -553,7 +552,7 @@ char *yytext;
     double floatVal;
     int intVal;
 } yylval;*/
-#line 557 "lex.yy.c"
+#line 556 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -771,10 +770,10 @@ YY_DECL
 		}
 
 	{
-#line 19 "token.l"
+#line 18 "token.l"
 
 
-#line 778 "lex.yy.c"
+#line 777 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -844,200 +843,200 @@ do_action:	/* This label is used only to access EOF actions. */
 case 1:
 /* rule 1 can match eol */
 YY_RULE_SETUP
-#line 21 "token.l"
+#line 20 "token.l"
 ;
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 22 "token.l"
+#line 21 "token.l"
 { TOKEN("if"); /*printf("if");*/ return Tif; }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 23 "token.l"
+#line 22 "token.l"
 { TOKEN("else"); /*printf("else");*/ return Telse; }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 24 "token.l"
+#line 23 "token.l"
 { TOKEN("while"); /*printf("while");*/ return Twhile; }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 25 "token.l"
+#line 24 "token.l"
 { TOKEN("return"); /*printf("return");*/ return Treturn; }
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 26 "token.l"
+#line 25 "token.l"
 { TOKEN("int"); /*printf("int");*/ return Tint; }
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 27 "token.l"
+#line 26 "token.l"
 { TOKEN("float"); /*printf("float");*/ return Tfloat; }
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 28 "token.l"
+#line 27 "token.l"
 { TOKEN("char"); /*printf("char");*/ return Tchar; }
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 29 "token.l"
+#line 28 "token.l"
 { TOKEN("void"); /*printf("void");*/ return Tvoid; }
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 30 "token.l"
+#line 29 "token.l"
 { TOKEN("identifier"); /*printf("identifier");*/ return Tidentifier; }
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 31 "token.l"
+#line 30 "token.l"
 { TOKEN("floatVal"); /*printf("floatValue");*/ return TfloatVal; }
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 32 "token.l"
+#line 31 "token.l"
 { TOKEN("intVal");/* printf("intValue");*/return TintVal; }
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 33 "token.l"
+#line 32 "token.l"
 { TOKEN("charVal"); return TcharVal; }
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 34 "token.l"
+#line 33 "token.l"
 { TOKEN("semi"); /*printf("; semi");*/ return Tsemi; }
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 35 "token.l"
+#line 34 "token.l"
 { TOKEN("assign"); /*printf("= assign");*/ return Tassign; }
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 36 "token.l"
+#line 35 "token.l"
 { TOKEN("cmpEqual"); /*printf("= cmpEqual");*/ return TcmpEqual; }
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 37 "token.l"
+#line 36 "token.l"
 { TOKEN("cmpNotEqual"); /* cmpNotEqual");*/ return TcmpNotEqual; }
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 38 "token.l"
+#line 37 "token.l"
 { TOKEN("lessThan"); /*printf("< lessThan");*/ return TlessThan; } 
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 39 "token.l"
+#line 38 "token.l"
 { TOKEN("lessThanEq"); /*printf("<= lessThanEqual");*/ return TlessThanEq; }
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 40 "token.l"
+#line 39 "token.l"
 { TOKEN("moreThan"); /*printf("> moreThan");*/ return TmoreThan; }
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 41 "token.l"
+#line 40 "token.l"
 { TOKEN("moreThanEq"); /*printf(">= moreThanEqual");*/ return TmoreThanEq; }
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 42 "token.l"
+#line 41 "token.l"
 { TOKEN("leftParen"); /*printf(" leftParen");*/ return yytext[0]; } 
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 43 "token.l"
+#line 42 "token.l"
 { TOKEN("rightParen"); /*printf(" rightParen");*/ return yytext[0]; }
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 44 "token.l"
+#line 43 "token.l"
 { TOKEN("leftBrace"); /*printf(" leftBrace");*/ return yytext[0]; }
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 45 "token.l"
+#line 44 "token.l"
 { TOKEN("rightBrace"); /*printf(" rightBrace");*/ return yytext[0]; }
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 46 "token.l"
+#line 45 "token.l"
 { TOKEN("dot"); /*printf(". dot");*/ return Tdot; }
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 47 "token.l"
+#line 46 "token.l"
 { TOKEN("comma"); /*printf(", comma");*/ return yytext[0]; }
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 48 "token.l"
+#line 47 "token.l"
 { TOKEN("plus"); /*printf("+ plus");*/ return Tplus; }
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 49 "token.l"
+#line 48 "token.l"
 { TOKEN("minus"); /*printf("- minus");*/ return Tminus; }
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 50 "token.l"
+#line 49 "token.l"
 { TOKEN("mul"); /*("* mul");*/ return Tmul; }
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
-#line 51 "token.l"
+#line 50 "token.l"
 { TOKEN("div"); /*printf("/ div");*/ return Tdiv; }
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
-#line 52 "token.l"
+#line 51 "token.l"
 { TOKEN("mod"); /*printf(" mod");*/ return Tmod; }
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
-#line 53 "token.l"
+#line 52 "token.l"
 { TOKEN("and"); /*printf("&& and");*/ return Tand; }
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
-#line 54 "token.l"
+#line 53 "token.l"
 { TOKEN("or"); /*printf("|| or");*/ return Tor; }
 	YY_BREAK
 case 35:
 YY_RULE_SETUP
-#line 55 "token.l"
+#line 54 "token.l"
 { TOKEN("selfMinus"); /*printf("-- selfminus");*/ return TselfMinus; }
 	YY_BREAK
 case 36:
 YY_RULE_SETUP
-#line 56 "token.l"
+#line 55 "token.l"
 { TOKEN("selfInc"); /*printf("++ selfInc");*/ return TselfInc; }
 	YY_BREAK
 case 37:
 YY_RULE_SETUP
-#line 57 "token.l"
+#line 56 "token.l"
 { TOKEN("not"); return Tnot; }
 	YY_BREAK
 case 38:
 YY_RULE_SETUP
-#line 58 "token.l"
+#line 57 "token.l"
 { TOKEN("unknow"); /*printf("Unknown token!\n");*/ yyterminate(); }
 	YY_BREAK
 case 39:
 YY_RULE_SETUP
-#line 60 "token.l"
+#line 59 "token.l"
 ECHO;
 	YY_BREAK
-#line 1041 "lex.yy.c"
+#line 1040 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -2050,7 +2049,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 60 "token.l"
+#line 59 "token.l"
 
 
 
